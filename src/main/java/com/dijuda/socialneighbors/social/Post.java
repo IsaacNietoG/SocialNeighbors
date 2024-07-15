@@ -1,7 +1,11 @@
 
-package com.dijuda.socialneighbors;
+package com.dijuda.socialneighbors.social;
+
+import com.dijuda.socialneighbors.social.interactions.*;
 
 public class Post implements Commentable, Likeable {
+
+  private String id;
 
   public Post () {
 
@@ -23,7 +27,8 @@ public class Post implements Commentable, Likeable {
   }
  
   @Override
-  public Iterable<Comment> viewComments() {
+  public Iterable<Comment> viewComments(){
     return null;    
   }  
+  
 }

@@ -1,5 +1,5 @@
 
-package com.dijuda.socialneighbors;
+package com.dijuda.socialneighbors.social;
 
 import java.util.Iterator;
 import java.util.List;
