@@ -15,10 +15,8 @@ public class User {
 
   private Family family;
 
-  public User (String name, String department) {
-    this.name = name;
-    this.department = department;
-    
+  public User() {
+
   }
 
 } 
