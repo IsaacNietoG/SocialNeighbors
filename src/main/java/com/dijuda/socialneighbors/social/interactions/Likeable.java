@@ -4,10 +4,16 @@ package com.dijuda.socialneighbors.social.interactions;
 
 import com.dijuda.socialneighbors.social.User;
 
-public interface Likeable {
+public abstract class Likeable {
 
-  public void like ();
+	private String postID;
 
-  public Iterable<User> viewLikes ();  
+  public void like () {
+			
+	}
+
+  public <T extends User> Iterable<T> viewLikes () {	
+		return null;		
+	}
 
 }	

@@ -3,18 +3,17 @@ package com.dijuda.socialneighbors.social.interactions;
 
 import com.dijuda.socialneighbors.social.User;
 
-public class Comment implements Likeable{
+public class Comment extends Likeable{
 
-  @Override
-  public void like(){
+//	private String comment;
 
-  }
-
-  @Override
-  public Iterable<User> viewLikes(){
-    return null;
-  }
-
-
- 
+	//private String postID;
+	public Comment () {
+		
+//		this.comment = comment;
+		
+	//	this.postID = postID;
+	}
+		
 }
+ 
