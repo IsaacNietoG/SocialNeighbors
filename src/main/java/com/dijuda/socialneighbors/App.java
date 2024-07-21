@@ -1,13 +1,12 @@
 package com.dijuda.socialneighbors;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+import com.dijuda.socialneighbors.api.Session;
+
+import java.net.HttpRetryException;
+import java.net.URI;
+import java.net.http.*;
+
+public class App {
+  public static void main(String[] args) {
+  } 
 }
