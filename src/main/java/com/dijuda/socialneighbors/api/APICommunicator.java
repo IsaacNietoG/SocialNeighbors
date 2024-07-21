@@ -1,7 +1,6 @@
 
 package com.dijuda.socialneighbors.api;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -27,7 +26,7 @@ public class APICommunicator {
 			HttpResponse<String> response; 		
 			try {
 				response = HttpClient.newHttpClient()
-				.send(createRequest(packet), HttpResponse.BodyHandlers.ofString());	
+				.send(buildRequest(packet).build(), HttpResponse.BodyHandlers.ofString());	
 			}	catch (Exception e) {
 				return false;
 			}
@@ -45,12 +44,17 @@ public class APICommunicator {
 				throw new IllegalStateException();
 			return response.getString(key);
 		}
+
+		//protected
 	
-		private HttpRequest createRequest (Packet packet) {
+		protected HttpRequest.Builder buildRequest (Packet packet) {
 			return HttpRequest.newBuilder()
-				.uri(URI.create(APILINK + packet.endPoint()))
-				.method(packet.method(), HttpRequest.BodyPublishers.ofString(packet.toString()))
-				.build();
+				.uri(getLink())
+				.method(packet.method(), HttpRequest.BodyPublishers.ofString(packet.toString()));
 		}
+
+		protected URI getLink() {
+			return URI.create(APILINK + packet.endPoint());
+		}  
 
 	}
