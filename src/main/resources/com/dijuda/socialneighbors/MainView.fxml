@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="91.0" minWidth="511.0" prefHeight="399.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="mainView" alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="91.0" minWidth="511.0" prefHeight="399.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="293.0" minWidth="10.0" prefWidth="207.0" />
     <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="393.0" />
@@ -24,17 +24,17 @@
     <RowConstraints maxHeight="120.0" minHeight="36.0" prefHeight="51.0" valignment="BOTTOM" vgrow="NEVER" />
   </rowConstraints>
    <children>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="toolbarBackground" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+      <HBox id="profileBar" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="toolbarBackground" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
          <children>
-            <ImageView fitHeight="54.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="selfProfilePicture" fitHeight="54.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" styleClass="profilePic">
                <image>
                   <Image url="@assets/profilepicture.png" />
                </image>
             </ImageView>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Juan Perez" />
+            <Text fx:id="selfName" strokeType="OUTSIDE" strokeWidth="0.0" text="Juan Perez" />
          </children>
       </HBox>
-      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="148.0" spacing="20.0" styleClass="toolbarBackground" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+      <VBox id="toolbar" fx:id="toolbar" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="148.0" spacing="20.0" styleClass="toolbarBackground" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
          <children>
             <Button mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Feed" textAlignment="CENTER" />
             <Button mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Search" textAlignment="CENTER" />
@@ -48,9 +48,9 @@
             <Insets />
          </GridPane.margin>
       </VBox>
-      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" styleClass="toolbarBackground" GridPane.rowIndex="3">
+      <HBox id="logoffBar" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" styleClass="toolbarBackground" GridPane.rowIndex="3">
          <children>
-            <ImageView fitHeight="37.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logOffButton" fitHeight="37.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assets/logoutbutton.png" />
                </image>
@@ -61,7 +61,7 @@
          </padding>
       </HBox>
       <HBox minHeight="35.0" prefHeight="35.0" prefWidth="200.0" styleClass="toolbarBackground" GridPane.columnIndex="1" GridPane.vgrow="NEVER" />
-      <HBox minHeight="35.0" prefHeight="35.0" prefWidth="200.0" styleClass="toolbarBackground" GridPane.vgrow="NEVER">
+      <HBox id="logoBar" minHeight="35.0" prefHeight="35.0" prefWidth="200.0" styleClass="toolbarBackground" GridPane.vgrow="NEVER">
          <children>
             <ImageView fitHeight="33.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
