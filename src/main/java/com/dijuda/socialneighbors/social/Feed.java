@@ -1,7 +1,6 @@
 
 package com.dijuda.socialneighbors.social;
 
-import com.dijuda.socialneighbors.api.Session;
 import java.util.Iterator;
 import java.util.List;
 
@@ -14,21 +13,18 @@ public class Feed implements Iterable<Post> {
 			return true;		
 		}
 
-
 		@Override
 		public Post next () {
 			return null;
 		}
 
 	}
+	
+	private User user;
 
-	private Session session;			
-
-	public Feed (Session session) {
-		this.session = session;
+	public Feed (User user) {
+		this.user = user;
 	}
-
-  private List<Post> posts;
 
   @Override 
   public Iterator<Post> iterator(){

@@ -15,7 +15,6 @@ public class Packet {
 		this.endPoint = "/" + endPoint;
 		this.method = method;
 		this.payLoad = payLoad;
-
   }
 
 	public String endPoint () {
@@ -25,6 +24,11 @@ public class Packet {
 	public String method () {
 		return method;
 	}
+	
+	public void setMethod (String method) {
+		this.method = method;
+	}
+
 
 	@Override
 	public String toString () {

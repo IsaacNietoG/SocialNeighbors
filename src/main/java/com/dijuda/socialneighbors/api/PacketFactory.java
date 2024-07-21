@@ -3,9 +3,7 @@ package com.dijuda.socialneighbors.api;
 
 import org.json.JSONObject;
 
-import com.dijuda.socialneighbors.social.interactions.Comment;
-import com.dijuda.socialneighbors.social.interactions.Likeable;
-
+import com.dijuda.socialneighbors.social.Post;
 
 public class PacketFactory {
  
@@ -14,32 +12,45 @@ public class PacketFactory {
 			new Packet("login", "GET"	,credentialsJSON(email, password));
 	}
 	
-	public Packet register (String email, String password, String name, String place, String familyID) {
-		JSONObject registerJSON = credentialsJSON(email, password)
-					.put ("name", name)
-					.put ("place", place);
-		if(null == familyID)
-			registerJSON.put ("familyID", familyID);
+	public Packet register (String email, String password, String username, String name, String place) {
 		return
-			new Packet ("register", "POST", registerJSON);
+			new Packet ("register", "POST", credentialsJSON(email, password)
+					.put("username", username)
+					.put ("name", name)
+					.put ("apartment", place));
 	}
 
-	public Packet like (Likeable likeable) {
+	public Packet like (Post post) {
 		return 
 			new Packet("like", "POST" , new JSONObject()
-					.put("postID", likeable.getPostID()));
+					.put("postID",post.getPostID()));
 	}
 	
-	public Packet comment (Comment comment) {
-		//Not finished
-		return
-			new Packet ("comment", "POST" ,new JSONObject());
-//				.put("text", comment.getText())
-//					.put("postID", comment.getPost()));
-	} 
+	public Packet unlike (Post post) {
+		Packet like = like(post);
+		like.setMethod("DELETE");	
+		return like;
+	}
 
+	public Packet comment (Post comment) {
+		String endPoint = "comment";
+		return
+			new Packet (endPoint, "POST" , postJSON(endPoint, comment)
+				.put("fatherPostID", comment.getFatherPost().orElseThrow().getPostID()));
+	} 
+	
+	public Packet post (Post post) {
+		String endPoint = "post";
+		return 
+			new Packet (endPoint, "POST" , postJSON(endPoint, post));
+	}
 
 	//Private Methods
+
+	private JSONObject postJSON (String endPoint, Post post) {
+		return new JSONObject()
+					.put ("content", post.getContent()); 
+	}
 
 	private JSONObject credentialsJSON (String email, String password) {
 		return new JSONObject()
