@@ -4,35 +4,36 @@ package com.dijuda.socialneighbors.api;
 import org.json.JSONObject;
 
 import com.dijuda.socialneighbors.social.interactions.Comment;
+import com.dijuda.socialneighbors.social.interactions.Likeable;
 
-import java.util.Optional;
 
 public class PacketFactory {
  
 	public Packet login (String email, String password) {
 		return 
-			new Packet("login",	credentialsJSON(email, password));
+			new Packet("login", "GET"	,credentialsJSON(email, password));
 	}
 	
-	public Packet register (String email, String password, String name, String apartment, Optional<String> familyID) {
-		return 
-			new Packet ("register",  credentialsJSON(email, password)
+	public Packet register (String email, String password, String name, String place, String familyID) {
+		JSONObject registerJSON = credentialsJSON(email, password)
 					.put ("name", name)
-					.put ("apartment", apartment)
-					.put ("familyID", familyID.orElse(""))
-					);
+					.put ("place", place);
+		if(null == familyID)
+			registerJSON.put ("familyID", familyID);
+		return
+			new Packet ("register", "POST", registerJSON);
 	}
 
-	public Packet like (String postID) {
+	public Packet like (Likeable likeable) {
 		return 
-			new Packet("like", new JSONObject()
-					.put("postID", postID));
+			new Packet("like", "POST" , new JSONObject()
+					.put("postID", likeable.getPostID()));
 	}
 	
 	public Packet comment (Comment comment) {
 		//Not finished
-		return 
-			new Packet ("comment", new JSONObject());
+		return
+			new Packet ("comment", "POST" ,new JSONObject());
 //				.put("text", comment.getText())
 //					.put("postID", comment.getPost()));
 	} 
