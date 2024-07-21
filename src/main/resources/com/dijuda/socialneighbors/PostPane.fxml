@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="0.0" prefHeight="400.0" prefWidth="600.0" styleClass="subPaneBackground" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane prefHeight="399.0" prefWidth="586.0">
+         <children>
+            <HBox id="feedPostBoxMain" alignment="CENTER" layoutX="104.0" layoutY="44.0" prefHeight="93.0" prefWidth="375.0" spacing="15.0" styleClass="feedPostBox" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="44.0">
+               <children>
+                  <ImageView fx:id="selfProfilePicFeed" fitHeight="67.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" styleClass="profilePic">
+                     <image>
+                        <Image url="@assets/profilepicture.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_RIGHT" prefHeight="93.0" prefWidth="254.0">
+                     <children>
+                        <TextArea id="feedPostBox" fx:id="postTextBox" prefHeight="200.0" prefWidth="200.0" />
+                        <Button id="feedPostButton" fx:id="postButton" alignment="TOP_LEFT" mnemonicParsing="false" text="Post" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox fx:id="feedPostList" layoutX="77.0" layoutY="156.0" prefHeight="210.0" prefWidth="582.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="156.0" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
