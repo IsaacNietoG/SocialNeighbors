@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="feedBackground" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" styleClass="feedBackground" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+         <content>
+            <AnchorPane prefHeight="398.0" prefWidth="582.0" styleClass="feedBackground">
+               <children>
+                  <HBox id="feedPostBoxMain" alignment="CENTER" layoutX="104.0" layoutY="44.0" prefHeight="93.0" prefWidth="375.0" spacing="15.0" styleClass="feedPostBox">
+                     <children>
+                        <ImageView id="feedPostImage" fitHeight="67.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/profilepicture.png" />
+                           </image>
+                        </ImageView>
+                        <TextArea id="feedPostText" minHeight="44.0" prefHeight="44.0" prefWidth="246.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

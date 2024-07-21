@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
@@ -11,18 +12,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="701.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22">
+<GridPane alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="91.0" minWidth="511.0" prefHeight="399.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="293.0" minWidth="10.0" prefWidth="207.0" />
     <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="393.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="94.0" valignment="TOP" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="290.0" minHeight="10.0" prefHeight="248.0" valignment="TOP" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="120.0" minHeight="0.0" prefHeight="49.0" valignment="TOP" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="30.0" valignment="TOP" vgrow="NEVER" />
+    <RowConstraints minHeight="94.0" prefHeight="94.0" valignment="TOP" vgrow="NEVER" />
+    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="229.0" prefHeight="231.0" valignment="TOP" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="120.0" minHeight="36.0" prefHeight="51.0" valignment="BOTTOM" vgrow="NEVER" />
   </rowConstraints>
    <children>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="toolbarBackground" stylesheets="@style.css" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
          <children>
             <ImageView fitHeight="54.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -32,21 +34,21 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Juan Perez" />
          </children>
       </HBox>
-      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="300.0" spacing="30.0" GridPane.rowIndex="1">
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="148.0" spacing="20.0" styleClass="toolbarBackground" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
          <children>
-            <Button mnemonicParsing="false" prefWidth="150.0" text="Feed" textAlignment="CENTER" />
-            <Button mnemonicParsing="false" prefWidth="150.0" text="Search" textAlignment="CENTER" />
-            <Button mnemonicParsing="false" prefWidth="150.0" text="Chats" textAlignment="CENTER" />
-            <Button mnemonicParsing="false" prefWidth="150.0" text="Mi Departamento" textAlignment="CENTER" />
+            <Button mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Feed" textAlignment="CENTER" />
+            <Button mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Search" textAlignment="CENTER" />
+            <Button mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Chats" textAlignment="CENTER" />
+            <Button mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Mi Departamento" textAlignment="CENTER" />
          </children>
          <padding>
-            <Insets bottom="25.0" top="25.0" />
+            <Insets bottom="25.0" left="15.0" top="25.0" />
          </padding>
          <GridPane.margin>
-            <Insets left="15.0" />
+            <Insets />
          </GridPane.margin>
       </VBox>
-      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" styleClass="toolbarBackground" GridPane.rowIndex="3">
          <children>
             <ImageView fitHeight="37.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -54,6 +56,23 @@
                </image>
             </ImageView>
          </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
+      </HBox>
+      <HBox minHeight="35.0" prefHeight="35.0" prefWidth="200.0" styleClass="toolbarBackground" GridPane.columnIndex="1" GridPane.vgrow="NEVER" />
+      <HBox minHeight="35.0" prefHeight="35.0" prefWidth="200.0" styleClass="toolbarBackground" GridPane.vgrow="NEVER">
+         <children>
+            <ImageView fitHeight="33.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/placeholder-logo-5.png" />
+               </image>
+            </ImageView>
+         </children>
       </HBox>
    </children>
+   <stylesheets>
+      <URL value="@style.css" />
+      <URL value="@style.css" />
+   </stylesheets>
 </GridPane>
