@@ -1,19 +1,19 @@
 
 package com.dijuda.socialneighbors.social.interactions;
 
-import com.dijuda.socialneighbors.social.User;
-
 public class Comment extends Likeable{
 
-//	private String comment;
+	private String text;
 
-	//private String postID;
+	private String postID;
+	
 	public Comment () {
-		
-//		this.comment = comment;
-		
-	//	this.postID = postID;
 	}
-		
+	
+	@Override
+	public String getPostID() {
+		return "";
+	}
+
 }
  
