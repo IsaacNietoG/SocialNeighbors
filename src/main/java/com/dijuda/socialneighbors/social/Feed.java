@@ -2,34 +2,33 @@
 package com.dijuda.socialneighbors.social;
 
 import java.util.Iterator;
-import java.util.List;
 
 public class Feed implements Iterable<Post> {
 
-	private class FeedIterator implements Iterator<Post>{
-		
-		@Override
-		public boolean hasNext () {		
-			return true;		
-		}
+    private class FeedIterator implements Iterator<Post> {
 
-		@Override
-		public Post next () {
-			return null;
-		}
+        @Override
+        public boolean hasNext() {
+            return true;
+        }
 
-	}
-	
-	private User user;
+        @Override
+        public Post next() {
+            return null;
+        }
 
-	public Feed (User user) {
-		this.user = user;
-	}
+    }
 
-  @Override 
-  public Iterator<Post> iterator(){
-    return new FeedIterator();
-  }
+    private User user;
+
+    public Feed(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public Iterator<Post> iterator() {
+        return new FeedIterator();
+    }
 
 
 }
