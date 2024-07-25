@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="451.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
       <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="60.0" />
@@ -24,7 +24,7 @@
          <children>
             <TextField fx:id="userField" alignment="CENTER" promptText="User" />
             <PasswordField fx:id="passwordField" alignment="CENTER" promptText="Password" />
-            <Button fx:id="loginButton" mnemonicParsing="false" text="Login" />
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#onLoginEvent" text="Login" />
          </children>
       </VBox>
    </children>

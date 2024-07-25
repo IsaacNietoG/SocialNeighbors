@@ -36,10 +36,10 @@
       </HBox>
       <VBox id="toolbar" fx:id="toolbar" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="148.0" spacing="20.0" styleClass="toolbarBackground" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
          <children>
-            <Button mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Feed" textAlignment="CENTER" />
-            <Button mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Search" textAlignment="CENTER" />
-            <Button mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Chats" textAlignment="CENTER" />
-            <Button mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Mi Departamento" textAlignment="CENTER" />
+            <Button fx:id="feedButton" mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Feed" textAlignment="CENTER" />
+            <Button fx:id="searchButton" mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Search" textAlignment="CENTER" />
+            <Button fx:id="chatsButton" mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Chats" textAlignment="CENTER" />
+            <Button fx:id="myDepartmentButton" mnemonicParsing="false" prefWidth="150.0" styleClass="toolbarButton" text="Mi Departamento" textAlignment="CENTER" />
          </children>
          <padding>
             <Insets bottom="25.0" left="15.0" top="25.0" />
